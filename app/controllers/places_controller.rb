@@ -9,6 +9,7 @@ def show
   @place = Place.find_by({"id"=> params["id"]})
 end
 
+
 def new
 end
 
@@ -24,8 +25,3 @@ def create
   redirect_to "/places"
 end
 
-private
-
-def place_params
-  params.require(:place).permit(:name) # Add other attributes here if needed
-end
