@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-end 
+ 
 
 def index
   @places = Place.all
@@ -11,17 +11,23 @@ end
 
 
 def new
+  @place = Place.new
 end
 
 def create
-  # start with a new Company
+
+  puts "i'm here"
+
   @place = Place.new
-  # assign user-entered form data to Company's columns
-  @place["name"] = params["name"]
- 
-  # save Company row
-  @place.save
-  # redirect user
+  @place["name"] = params["place"]
+  @place["date_visited"] = params ["date_visited"]
+  @place["description"] = params["description"]
+   @place.save
+
+puts "place was saved"
+
   redirect_to "/places"
+
 end
 
+end
