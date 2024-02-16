@@ -16,15 +16,11 @@ end
 
 def create
 
-  puts "i'm here"
-
   @place = Place.new
   @place["name"] = params["place"]
-  @place["date_visited"] = params ["date_visited"]
+  @place["date_visited"] = params["date_visited"]
   @place["description"] = params["description"]
-   @place.save
-
-puts "place was saved"
+  @place.save
 
   redirect_to "/places"
 
