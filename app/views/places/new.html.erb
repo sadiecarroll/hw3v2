@@ -1,16 +1,12 @@
 <h1>New Place</h1>
 
-<%= form_with model: @place do |form| %>
+
+<form action="/places" method="post">
+ <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>
     <label for="name">Name</label>
     <input type="text" name="name">
   </p>
-    <p>
-    <label for="date_visisted">Date Visited</label>
-    <input type="date" name="date_visited">
-  </p>  <p>
-    <label for="description">Description</label>
-    <input type="text" name="description">
-  </p>
-  <%= form.submit%>
-  <% end %>
+  
+  <button>Submit</button>
+</form>
